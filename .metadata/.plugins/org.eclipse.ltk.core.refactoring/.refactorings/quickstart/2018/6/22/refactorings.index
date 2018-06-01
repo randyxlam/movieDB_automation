@@ -1,0 +1,7 @@
+1527813233481	Rename type 'AppTest'
+1527822111376	Rename type 'movies'
+1527823973745	Encapsulate field 'TMDB_base_url'
+1527823995535	Encapsulate field 'PARAM_API_KEY'
+1527826666599	Delete element
+1527826811938	Move compilation unit
+1527864784665	Delete element

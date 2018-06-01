@@ -1,0 +1,33 @@
+package movieDB.quickstart;
+
+import org.apache.commons.lang3.StringUtils;
+
+public class TestUtils {
+
+	/**
+	 * Get a system property, throw exception if not present
+	 *
+	 * @param propertyName
+	 * @return
+	 */
+	public static String getInterceptServiceBaseURL(){
+
+		final String propertyName = "intercept-service.base.url";
+
+		String propertyValue = System.getProperty(propertyName);
+
+		if(StringUtils.isBlank(propertyValue)){
+			throw new IllegalStateException(
+					"Could not find required system property [" + propertyName + "]");
+		}
+
+		///////////////////////////////////////////
+		//For manual test running can return hardcoded value
+		//return "http://dutdock02:9050/";
+		///////////////////////////////////////////
+
+		return propertyValue;
+	}
+}
+
+}

@@ -1,0 +1,41 @@
+package movieDB.quickstart;
+
+import static io.restassured.RestAssured.when;
+import static org.assertj.core.api.Assertions.assertThat;
+
+import org.junit.Test;
+
+import io.restassured.response.Response;
+
+public class Movies extends Base_RT {
+
+	/**
+	 * Basic happy path response test
+	 */
+	@Override
+	@Test
+	public void tmdb() {
+		Response response = when().get(
+				getTmdbBaseUrl() + "/movie/76341?api_key=" + PARAM_API_KEY );
+
+		assertThat(response.getStatusCode())
+		.as("When calling endpoint, "
+				+ "do we get the expected http status code?")
+		.isEqualTo(200);
+	}
+
+	/**
+	 * Basic non-happy path response test (Unauthorized)
+	 */
+	@Override
+	@Test
+	public void tmdbInvalid() {
+		Response response = when().get(
+				getTmdbBaseUrl() + "/movie/76341?api_key=" + "/" + PARAM_API_KEY );
+
+		assertThat(response.getStatusCode())
+		.as("When calling endpoint, "
+				+ "do we get the expected http status code?")
+		.isEqualTo(401);
+	}
+}

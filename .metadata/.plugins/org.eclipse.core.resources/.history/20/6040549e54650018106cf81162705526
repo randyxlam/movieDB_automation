@@ -1,0 +1,9 @@
+package movieDB.quickstart;
+
+import entities.Movie;
+
+public class MoviesData {
+
+	public static final Movie testMovie = new Movie();
+
+}

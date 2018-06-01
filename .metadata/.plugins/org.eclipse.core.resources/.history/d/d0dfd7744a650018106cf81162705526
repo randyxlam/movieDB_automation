@@ -1,0 +1,8 @@
+package movieDB.quickstart;
+
+import 
+public class StubMovieDAO {
+
+	  public static final Movie testMovie = new Movie();
+	  
+}

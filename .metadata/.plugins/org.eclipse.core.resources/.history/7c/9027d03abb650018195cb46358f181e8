@@ -1,0 +1,21 @@
+package movieDB.quickstart;
+
+/**
+ * Unit test for simple App.
+ */
+public class Base_RT {
+
+	private static final String TMDB_base_url = TestUtils.getTMDBBaseURL();
+
+	//parameterized API key
+	private static final String PARAM_API_KEY = "3d1f4ae096c3ba2868ca941ecd1c865d";
+
+	public static String getTmdbBaseUrl() {
+		return TMDB_base_url;
+	}
+
+	public static String getParamApiKey() {
+		return PARAM_API_KEY;
+	}
+}
+

@@ -1,0 +1,20 @@
+package movieDB.quickstart;
+
+import entities.Movie;
+
+public class MoviesData {
+
+	public static final Movie fakeMovie = new Movie();
+
+	private static void runMoviesData() {
+		fakeMovie.adult = false;
+		fakeMovie.id = 24428;
+		fakeMovie.title = "The Avengers";
+		fakeMovie.original_title = "The Avengers";
+		fakeMovie.release_date = JSON_STRING_DATE.parse("2012-04-25");
+		fakeMovie.original_language = "en";
+		fakeMovie.overview = "This is a test";
+	}
+
+
+}

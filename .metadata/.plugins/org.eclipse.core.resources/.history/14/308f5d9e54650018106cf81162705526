@@ -1,0 +1,10 @@
+package movieDB.quickstart;
+
+import entities.Movie;
+
+public class MoviesData {
+
+	public static final Movie fakeMovie = new Movie();
+	
+
+}

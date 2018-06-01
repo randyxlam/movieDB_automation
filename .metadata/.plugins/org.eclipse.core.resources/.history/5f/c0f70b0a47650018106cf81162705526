@@ -1,0 +1,36 @@
+package movieDB.quickstart;
+
+import static io.restassured.RestAssured.when;
+import static org.assertj.core.api.Assertions.assertThat;
+
+import org.junit.Test;
+
+import io.restassured.response.Response;
+
+
+/**
+ * Unit test for simple App.
+ */
+public class Base_RT {
+
+	private static final String TMDB_base_url = TestUtils.getTMDBBaseURL();
+
+	//parameterized API key
+	private static final String PARAM_API_KEY = "3d1f4ae096c3ba2868ca941ecd1c865d";
+
+	/**
+	 * Basic happy path test
+	 */
+	@Test
+	public void tmdb() {
+		Response response = when().get(
+				TMDB_base_url + "/movie/76341?api_key=" + PARAM_API_KEY );
+
+		assertThat(response.getStatusCode())
+		.as("When calling endpoint, "
+				+ "do we get the expected http status code?")
+		.isEqualTo(400);
+
+	}
+}
+

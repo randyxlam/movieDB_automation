@@ -1,0 +1,14 @@
+package entities;
+
+import java.util.Collection;
+
+public class Movie {
+
+	public Integer budget;
+	public String homepage;
+	public String imdb_id;
+	public Integer revenue;
+	public Integer runtime;
+	public String tagline;
+	
+}

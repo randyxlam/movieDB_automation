@@ -1,0 +1,8 @@
+package services;
+
+public interface MoviesService {
+	
+	@GET("movie/{movie_id}")
+	Call<Movie> summary(
+			@Path("movie_id") int movie
+}

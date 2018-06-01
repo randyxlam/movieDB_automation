@@ -1,0 +1,51 @@
+package movieDB.quickstart;
+
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+
+import org.apache.commons.lang3.StringUtils;
+import org.junit.Test;
+
+import static io.restassured.RestAssured.*;
+import static io.restassured.matcher.RestAssuredMatchers.*;
+import static org.hamcrest.Matchers.*;
+
+
+/**
+ * Unit test for simple App.
+ */
+public class Base_RT {
+
+	private final String TMDB_base_url;
+
+	//parameterized API key
+	private static final String PARAM_API_KEY = "3d1f4ae096c3ba2868ca941ecd1c865d";
+
+	public Base_RT() {
+		TMDB_base_url = getSystemProperty("Tmdb.base.url");
+	}
+
+	@Test
+	public void tmdb() {
+		Response response = when().get(
+				TMDB_base_url + PARAM_API_KEY);
+
+		response.then()
+		.statusCode(200)
+		.contentType(ContentType.TEXT);
+	}
+	private static String getSystemProperty(String propertyName){
+
+		//Can we get the body, and then slice it up but still check JSON easily.
+		String propertyValue = System.getProperty(propertyName);
+
+		if(StringUtils.isBlank(propertyValue)){
+			throw new IllegalStateException(
+					"Could not get required system property [" +
+							propertyName + "]");
+		}
+
+		return propertyValue;
+	}
+}
+

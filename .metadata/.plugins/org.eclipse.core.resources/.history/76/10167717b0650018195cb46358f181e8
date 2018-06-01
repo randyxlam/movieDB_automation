@@ -1,0 +1,18 @@
+package movieDB.quickstart;
+
+import entities.Movie;
+
+public class MoviesData {
+
+	public static final Movie fakeMovie = new Movie();
+
+	private static void runMoviesData() {
+		fakeMovie.adult = false;
+		fakeMovie.original_title = "Harry Potter";
+		fakeMovie.original_language = "en";
+		fakeMovie.overview = "This is a test";
+		fakeMovie.title = "Harry Potter";
+	}
+
+
+}
